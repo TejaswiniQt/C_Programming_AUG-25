@@ -1,0 +1,23 @@
+// Check the the number is power of 4 or not 
+#include<stdio.h>
+
+int power_of_four(int num)
+{
+    int power_of_2,power_of_4;
+    power_of_2 = !(num & (num-1));
+    power_of_4 = power_of_2 && (num % 3 == 1);
+    return power_of_4;
+}
+
+int main()
+{
+    int num, res;
+    printf("Enter the number: ");
+    scanf("%d",&num);
+    res = power_of_four(num);
+    if(res == 1)
+    printf("%d is power of 4\n",num);
+    else
+    printf("%d is not power of 4\n",num);
+    return 0;
+}
